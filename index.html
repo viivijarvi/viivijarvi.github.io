@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viivi Järvi | Princeton University</title>
+<meta name="description" content="Viivi Järvi, PhD candidate in Politics at Princeton University. Research on authoritarian successor parties, democratization, and Latin American politics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Palette: pine forest, birch white, lingonberry. */
+  :root {
+    --pine: #22433B;
+    --pine-deep: #1A352E;
+    --birch: #FAFAF7;
+    --on-pine: #F1F4EE;
+    --on-pine-muted: #B9C9C0;
+    --ink: #1A1F1D;
+    --muted: #5E6B66;
+    --mist: #E3E9E5;
+    --lingon: #B23A48;
+    --lingon-soft: #F6E4E6;
+    --serif: "Young Serif", "Iowan Old Style", Georgia, serif;
+    --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--birch);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.08rem;
+    line-height: 1.62;
+  }
+  a { color: var(--ink); text-decoration-color: var(--lingon); text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
+  a:hover { color: var(--lingon); }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--lingon); outline-offset: 3px; border-radius: 3px; }
+
+  .page { display: grid; grid-template-columns: 1fr; min-height: 100vh; }
+  @media (min-width: 920px) { .page { grid-template-columns: minmax(320px, 36%) 1fr; } }
+
+  /* The colour field */
+  .side {
+    background: var(--pine);
+    color: var(--on-pine);
+    padding: 3rem 1.6rem 2.4rem;
+  }
+  @media (min-width: 920px) {
+    .side { position: sticky; top: 0; height: 100vh; padding: 4.5rem 3rem 3rem; display: flex; flex-direction: column; }
+  }
+  .portrait {
+    width: 168px; height: 210px; object-fit: cover; object-position: center 20%; display: block;
+    margin-bottom: 1.8rem; border-radius: 84px 84px 6px 6px;
+    background: var(--pine-deep);
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(2.7rem, 5vw, 4rem);
+    line-height: 1.0; letter-spacing: -0.01em;
+    margin: 0 0 1.1rem; color: var(--birch);
+  }
+  .role { font-size: 0.98rem; line-height: 1.5; color: var(--on-pine-muted); margin: 0 0 1.6rem; }
+  .side-links { list-style: none; padding: 0; margin: 0 0 2rem; font-size: 0.98rem; }
+  .side-links li { margin-bottom: 0.45rem; }
+  .side a { color: var(--on-pine); text-decoration-color: rgba(241,244,238,0.45); }
+  .side a:hover { color: var(--birch); text-decoration-color: var(--birch); }
+  .side a:focus-visible { outline-color: var(--birch); }
+  .side nav { margin-top: auto; display: flex; gap: 1.4rem; font-size: 0.98rem; }
+  .side nav a { text-decoration: none; }
+  .side nav a:hover { text-decoration: underline; }
+  @media (max-width: 919px) { .side nav { margin-top: 0.5rem; } }
+
+  /* Reading column */
+  main { padding: 3rem 1.6rem 3rem; }
+  @media (min-width: 920px) { main { padding: 4.5rem 4rem 4rem; } }
+  .inner { max-width: 66ch; }
+  main section { margin-bottom: 3.6rem; scroll-margin-top: 2rem; }
+  h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 1.75rem; line-height: 1.2;
+    margin: 0 0 1.3rem; color: var(--pine);
+  }
+  main p { margin: 0 0 1rem; }
+
+  .dissertation { margin-bottom: 2.4rem; padding: 1.1rem 1.3rem; background: var(--mist); border-radius: 6px; }
+  .dissertation p { margin: 0; }
+  .dissertation .title { font-family: var(--serif); font-size: 1.12rem; line-height: 1.4; }
+  .meta { font-size: 0.92rem; color: var(--muted); }
+
+  .paper { margin: 0 0 2rem; }
+  .paper h3 { font-size: 1.12rem; font-weight: 600; line-height: 1.38; margin: 0 0 0.3rem; }
+  .paper .meta { margin: 0 0 0.4rem; }
+  .jmp-tag {
+    display: inline-block; font-size: 0.85rem; font-weight: 600;
+    color: var(--lingon); background: var(--lingon-soft);
+    padding: 0.12rem 0.6rem; border-radius: 999px; margin-bottom: 0.5rem;
+  }
+  summary { cursor: pointer; font-size: 0.95rem; font-weight: 500; color: var(--lingon); list-style: none; display: inline-block; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "+ "; }
+  details[open] summary::before { content: "\2212  "; }
+  details p { margin-top: 0.7rem; padding-left: 1.1rem; border-left: 3px solid var(--lingon-soft); }
+
+  .teach { list-style: none; padding: 0; margin: 0; }
+  .teach li { margin-bottom: 1.35rem; }
+  .teach .course { display: block; font-weight: 600; }
+  .teach .meta { display: block; }
+  .teach p { margin: 0.3rem 0 0; }
+
+  footer { font-size: 0.88rem; color: var(--muted); padding-top: 1.2rem; border-top: 1px solid var(--mist); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="side">
+    <!-- Add a photo named photo.jpg in the same folder. If it's missing, this line hides itself. -->
+    <img class="portrait" src="photo.jpg" alt="Viivi Järvi" onerror="this.style.display='none'">
+    <h1>Viivi Järvi</h1>
+    <p class="role">PhD Candidate, Department of Politics<br>Princeton University</p>
+    <ul class="side-links">
+      <li><a href="mailto:vjarvi@princeton.edu">vjarvi@princeton.edu</a></li>
+      <!-- Upload your CV PDF with exactly this filename, or change the link. -->
+      <li><a href="Jarvi_CV.pdf">Curriculum vitae (PDF)</a></li>
+    </ul>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="inner">
+    <section id="about">
+      <h2>About</h2>
+      <!-- Your Kellogg bio, final version, unchanged. -->
+      <p>Viivi Järvi is a PhD candidate in the Princeton University Department of Politics and a Quin Morton Teaching Fellow with the Princeton Writing Program—a competitive, interdisciplinary teaching fellowship through which she designed and now teaches <em>Making Memory</em>, a first-year seminar with a central unit on collective memory in post-junta Argentina. She was previously a Graduate Fellow with Princeton’s Program in Latin American Studies. She studies transitions from civil conflict and non-democracy, with her dissertation examining post-authoritarian party politics around the world, with a focus on Latin America.</p>
+      <p>Her dissertation, to be defended in May 2027, explains why some parties with authoritarian roots adapt to democratic politics while others display continuity with the practices, distributive priorities, and public image of their predecessors, tracing this variation to the personnel, coalitions, and reputation these parties inherit from the past regime. It thereby identifies the conditions under which these parties shape historical and present-day prospects for democratic stability. Her dissertation research, which includes original archival and interview-based fieldwork in Chile, is supported by a Multi-Center Graduate Student Dissertation Grant from the Mamdouha S. Bobst Center for Peace and Justice.</p>
+      <p>Beyond the dissertation, her ongoing solo-authored projects explore the role of political parties in the transmission of individual and institutional legacies of authoritarianism and conflict. Her co-authored projects include a study of political-party-level legacies of rebel governance in Central America and an exploration of the influence of religious institutions on political outcomes in post-Franco Spain.</p>
+      <p>Viivi has a BA in Political Science and Romance Languages and Literatures and an MA in International Relations from the University of Chicago, where she worked in the Transitional Justice and Democratic Stability Lab and conducted independent research on the political determinants and consequences of transitional justice in Southern Europe and around the globe.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <div class="dissertation">
+        <p><span class="title">Who Moderates, How, and Why? Explaining Trajectories in Authoritarian Successor Party Behavior</span><br>
+        <span class="meta">Dissertation. Committee: Deborah Yashar (chair), Grigore Pop-Eleches, Guadalupe Tuñón</span></p>
+      </div>
+
+      <article class="paper">
+        <span class="jmp-tag">Job market paper</span>
+        <h3>Autocratic Ancestry, Democratic Dilemmas: Tracing Anti-Democratic Behavior in Authoritarian Successor Parties</h3>
+        <details>
+          <summary>Abstract</summary>
+          <!-- The abstract from your writing sample, unchanged. -->
+          <p>Why do some political parties descended from dictatorships accept democracy while others attack it? I argue that whether an authoritarian successor party accepts democracy depends less on the voters it faces than on whom it inherits from its predecessor regime: its “personnel endowment.” Successor parties inherit an exclusionary cadre of elites, whose convictions are least compatible with rule by popular consent, to the extent that their predecessor regimes built politics around loyalty to a leader rather than around impersonal institutions. In an original dataset of parties competing after second- and third-wave transitions, successors to more personalized regimes are more likely to reject the rules of electoral democracy. This effect is specific to successor parties, confined to rejection of democracy’s rules rather than its norms, and persists through the first two decades of democracy. Archival evidence from Chile shows how one regime’s endowment can split: elites formed in defense of the Pinochet regime concentrated in the intransigent UDI, while those formed in its 1980s political opening shaped the more reform-minded RN. The UDI deliberately reproduced its inheritance through selective recruitment, suggesting one explanation for the endurance of the personalization effect identified cross-nationally.</p>
+        </details>
+      </article>
+
+      <article class="paper">
+        <h3>From Control to Competition: Regime Successors and Coalitions after Pinochet</h3>
+        <details>
+          <summary>Abstract</summary>
+          <!-- Your abstract, updated with the chapter's findings. -->
+          <p>How does the authoritarian past influence partisan electoral coalition-building in post-democratization contexts? This paper explores the strategies of authoritarian successor parties (ASPs)—parties with roots in past authoritarian regimes—in shaping their support bases in the wake of transitions to democracy. In particular, the paper explores the reasons why and mechanisms through which ASPs either entrench regime-era political alignments (coalition-maintenance), or seek to construct broader bases of electoral support among the population (coalition-building). Arguing these patterns to be rooted in authoritarian-era networks—whether established through coercion or co-optation—this paper constructs a theory of continuity and disruption in the transmission of political loyalties from the past to the present, positing political parties as crucial mediators in the process. Cross-national analyses show that successor parties distribute in the same way, and to the same people, as their predecessor regimes, and that these effects are weaker where transitions are highly disruptive—where regime-era networks are less likely to survive a transition intact. Using fine-grained municipal-level political spending data in the context of post-Pinochet Chile, this paper then links authoritarian successor parties’ local-level behaviors of resource allocation and coalition-construction to pre-transition patterns of control, clientelism, and coercion, showing that successor party spending tracks locally inherited coalitions from the regime.</p>
+        </details>
+      </article>
+
+      <article class="paper">
+        <h3>From Rebels to Parties: Exploring the Legacies of Rebel Governance on Rebel Successor Party Organization</h3>
+        <p class="meta">With Manasi Bose</p>
+        <details>
+          <summary>Abstract</summary>
+          <!-- Your abstract, verbatim. Manasi approved. -->
+          <p>This paper examines how rebel governance in civil conflict affects the organizational capacity and performance of rebel successor parties in the post-conflict period. Specifically, we seek to understand the relationship between the nature of wartime rebel governance institutions, and indicators of postwar rebel successor party organizational strength, local presence, internal cohesion, and breadth of support. We hypothesize that parties succeeding rebel groups with a history of more extensive wartime institutionalization should be better-connected and have greater mobilizational capacity in the postwar period. A cross-national empirical analysis at the party-election-year level establishes the validity of our theory. Further, in a case study of the FMLN in El Salvador, we use archival materials to illustrate the link between the group's wartime institutionalization and their transition to a successful political party. We nuance this with an analysis of El Salvador's municipality-level electoral dynamics in the wake of the conflict as a function of the FMLN's wartime territorial control and institutionalization. Results show that territorial control was negatively associated with the capacity of rival parties to establish local presence, thus shedding light on the complex ways in which wartime institutionalization drives postwar electoral outcomes for rebel successor parties.</p>
+        </details>
+      </article>
+
+      <article class="paper">
+        <h3>Why do Authoritarian Successor Parties Succeed? How Francoist Legacies in the Spanish Catholic Church Boosted Regime Successor Party Performance</h3>
+        <p class="meta">With Guadalupe Tuñón and Miguel Alquezar-Yus</p>
+      </article>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul class="teach">
+        <li>
+          <span class="course"><em>Making Memory</em> (WRI 197)</span>
+          <span class="meta">Instructor of record, Princeton Writing Program, Fall 2026 and Spring 2027</span>
+          <!-- Your description from the Gonzaga cover letter. -->
+          <p>A first-year seminar on how individuals and societies construct and contest memory. One of its central units is a case study of post-junta Argentina, in which students work directly with the <em>Nunca Más</em> report, transitional justice legislation, and trial records.</p>
+        </li>
+        <li>
+          <span class="course">Introduction to Comparative Politics (POL 230)</span>
+          <span class="meta">Assistant instructor for Andreas Wiedemann, Fall 2024</span>
+        </li>
+        <li>
+          <span class="course">Conducting Independent Research in Political Science (POL 300)</span>
+          <span class="meta">Head preceptor and assistant instructor for Markus Prior, Fall 2023; accompanying seminar, Developing Democracies (Rocío Titiunik)</span>
+        </li>
+        <li>
+          <span class="course">Junior Independent Work Plenary Session (POL 981)</span>
+          <span class="meta">Head preceptor and assistant instructor for Markus Prior, Fall 2022; accompanying seminar, Representation and Inequality in Democracies (Rafaela Dancygier)</span>
+        </li>
+        <li>
+          <span class="course">Mellon Mays Undergraduate Fellowship</span>
+          <span class="meta">Graduate Student Research Mentor, Emma Bloomberg Center for Access and Opportunity, Summer 2026</span>
+        </li>
+      </ul>
+    </section>
+    <footer>Last updated October 2026</footer>
+    </div>
+  </main>
+</div>
+</body>
+</html>
